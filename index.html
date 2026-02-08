@@ -96,16 +96,18 @@
             font-size: 1.3rem;
         }
         
+        /* 核心修改：固定四列平均分配，消除右侧空隙 */
         .audio-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
         }
         
+        /* 核心修改：音频项内部靠左对齐 */
         .audio-item {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             padding: 15px;
             background-color: #f9f9f9;
             border-radius: 8px;
@@ -137,6 +139,7 @@
             margin-top: 5px;
             min-height: 18px;
             text-align: center;
+            width: 100%;
         }
         
         footer {
@@ -148,17 +151,10 @@
             font-size: 0.9rem;
         }
         
-        @media (max-width: 768px) {
+        /* 响应式适配：不同屏幕宽度下调整列数 */
+        @media (max-width: 992px) {
             .audio-container {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .dataset {
-                padding: 15px;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -201,7 +197,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model0_0.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -210,7 +206,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model0_11.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -219,7 +215,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model0_16.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -228,7 +224,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model0_21.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                 </div>
@@ -246,7 +242,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model1_0.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -255,7 +251,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model1_11.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -264,7 +260,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model1_16.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -273,7 +269,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model1_21.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                 </div>
@@ -291,7 +287,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model2_0.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -300,7 +296,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model2_11.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -309,7 +305,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model2_16.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -318,7 +314,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model2_21.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                 </div>
@@ -336,7 +332,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model3_0.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -345,7 +341,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model3_11.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -354,7 +350,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model3_16.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -363,7 +359,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model3_21.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                 </div>
@@ -381,7 +377,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model4_0.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -390,7 +386,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model4_11.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -399,7 +395,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model4_16.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                     
@@ -408,7 +404,7 @@
                         <audio controls onerror="this.nextElementSibling.innerHTML = 'Audio loading failed'">
                             <source src='audio_bench/model4_21.wav' type='audio/wav'>
                             Your browser does not support the audio element.
-                        </audio>
+                        
                         <div class="loading-error"></div>
                     </div>
                 </div>
