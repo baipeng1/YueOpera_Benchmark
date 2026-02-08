@@ -90,22 +90,23 @@
         .audio-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            width: 100%;
-            padding: 0 20px;
-            margin: 0;
+            gap: 10px;
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            padding: 0;
         }
         
         .audio-item {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            padding: 15px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 10px;
             background-color: #f9f9f9;
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
-            width: 100%;
-            min-height: 120px;
+            height: 140px;
+            min-width: 0;
         }
         
         .audio-item:hover {
@@ -115,10 +116,14 @@
         
         .sample-label {
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #2a2a72;
             font-size: 1rem;
             text-align: center;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         audio {
@@ -131,11 +136,12 @@
         .loading-error {
             color: #e63946;
             font-style: italic;
-            font-size: 12px;
+            font-size: 11px;
             margin-top: 8px;
             min-height: 18px;
             text-align: center;
             width: 100%;
+            height: 18px;
         }
         
         footer {
@@ -152,8 +158,12 @@
                 max-width: 1200px;
             }
             .audio-container {
-                gap: 12px;
-                padding: 0 15px;
+                gap: 8px;
+                width: calc(100% - 30px);
+            }
+            .audio-item {
+                padding: 12px 8px;
+                height: 135px;
             }
         }
         
@@ -161,15 +171,21 @@
             .audio-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
+                width: calc(100% - 40px);
+            }
+            .audio-item {
+                height: 130px;
+                padding: 15px 10px;
             }
         }
         
         @media (max-width: 768px) {
             .audio-container {
-                padding: 0 10px;
+                width: calc(100% - 20px);
             }
             .audio-item {
-                padding: 12px;
+                padding: 12px 8px;
+                height: 125px;
             }
         }
         
@@ -177,6 +193,11 @@
             .audio-container {
                 grid-template-columns: 1fr;
                 gap: 12px;
+                width: calc(100% - 20px);
+            }
+            .audio-item {
+                height: 120px;
+                padding: 15px 10px;
             }
             body {
                 padding: 15px;
